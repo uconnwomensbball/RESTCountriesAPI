@@ -1,0 +1,103 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0px; 
+  padding: 0px; 
+  font-family: "Nunito Sans", sans-serif;
+  min-width: 320px; 
+}
+
+.header-div{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px; 
+}
+
+.mode-p{
+  cursor: pointer; 
+}
+
+label{
+  margin-bottom: 5px; 
+}
+input{
+  padding: 5px 0px 5px 5px; 
+  font-family: "Nunito Sans", sans-serif;
+  border: none; 
+}
+
+select{
+  padding: 5px 0px 5px 5px; 
+  font-family: "Nunito Sans", sans-serif;
+  border: none; 
+}
+
+.query-div{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; 
+}
+
+.countries-div{
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap;
+  margin: 0px;
+  gap: 20px;
+  padding: 0px 15px 15px 15px;  
+  
+}
+
+.input-country-div, .select-region-div{
+  display: flex; 
+  flex-direction: column;  
+}
+
+img{
+  height: 100px; 
+  width: 100%; 
+}
+
+.individual-country-div{
+  cursor: pointer;  
+  width: 190px; 
+}
+
+.individual-country-div>p{
+  margin: 0px; 
+}
+
+.country-details{
+  padding: 0px 10px; 
+
+}
+
+.country-details>h4{
+  margin-top: 0px; 
+  margin-bottom:5px; 
+
+}
+
+.country-details>p{
+  margin: 5px 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*MISC*/
+
+.bold{
+  font-weight: bold;
+}
+
+.small-font{
+  font-size: .87rem; 
+}
