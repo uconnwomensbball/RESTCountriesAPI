@@ -1,6 +1,6 @@
 #T2D
 1. Make filter by region jump back to "All" as soon as the input it interacted with; then, if the region is interacted with, clear out the input 
-2. Use react router
+2. 
 3. Add accessibility features  
 4. Create a message if there are no matching countries
 5. Box shadows are not being applied
