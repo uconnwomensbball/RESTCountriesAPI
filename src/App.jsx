@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 import Home from "./components/Home.jsx"
-import Header from "./components/Header.jsx"
 import CountryDetail from "./components/CountryDetail.jsx"
+import Layout from "./components/Layout.jsx"
 
 // TODO: Refactor this function
 // ! Warning: deprecated
@@ -28,11 +28,12 @@ function App() {
 
     return (
       <>
-      <BrowserRouter>
-        <Header mode={mode} changeMode={changeMode}/>
+      <BrowserRouter>      
           <Routes>
-            <Route path="/" element={<Home mode={mode}/>}/>
-              <Route path="/:country" element={<CountryDetail/>}/>
+             <Route element={<Layout mode={mode} changeMode={changeMode}/>}> 
+                <Route path="/" element={<Home mode={mode}/>}/>
+                <Route path="/:country" element={<CountryDetail/>}/>
+              </Route> 
           </Routes>
         <footer>JDJD Codes <FontAwesomeIcon className= "fa-icon" icon={faScaleBalanced} /></footer>
     </BrowserRouter>

@@ -35,8 +35,7 @@ export default function Home({mode}){
   //filters countries by region 
     function filterByRegion(region){
       const countriesFilteredByRegion = countriesData.filter(function(country){
-        return country.region === region
-      })
+        return country.region === region})
     
       if (region === "All"){
         setDisplayedCountries(countriesData)}
@@ -67,16 +66,16 @@ export default function Home({mode}){
             </div>
             <div className="select-region-div">
                 <label htmlFor="region" className = "small-font">Filter by region:</label>
-                <select onChange={()=>filterByRegion(event.target.value)} defaultValue="Africa" style={{
+                <select onChange={()=>filterByRegion(event.target.value)} defaultValue="All" style={{
                     backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)", 
                     color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)", 
                     boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}>
-                <option value="All">All</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
+                  <option value="All">All</option>
+                  <option value="Africa">Africa</option>
+                  <option value="America">America</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Oceania">Oceania</option>
                 </select>
             </div>
             </div>
