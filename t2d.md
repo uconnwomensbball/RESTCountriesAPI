@@ -6,10 +6,10 @@
 5. Box shadows are not being applied
 6. Fix the padding around elements 
 7. The placeholder text is not the right color
-8. Make filter by region default to "All" COMPLETED 
+8. 
 9. @media - when only two countries can fit on screen side by side, need to increase size of individual country div 
 10. Make the input entered capitalize the first letter
 11. Need a min width 
-12. Change the "tab" icon from the Vite icon COMPLETE
+12. 
 13. The params are % so when you type in a country manually--it doesn't work 
-14. Add a layout route COMPLETED 
+14. 

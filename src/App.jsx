@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from "react-router"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faScaleBalanced } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 import Home from "./components/Home.jsx"
 import CountryDetail from "./components/CountryDetail.jsx"
@@ -35,7 +33,7 @@ function App() {
                 <Route path="/:country" element={<CountryDetail/>}/>
               </Route> 
           </Routes>
-        <footer>JDJD Codes <FontAwesomeIcon className= "fa-icon" icon={faScaleBalanced} /></footer>
+      
     </BrowserRouter>
       </>
     )
