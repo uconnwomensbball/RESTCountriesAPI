@@ -73,6 +73,13 @@ img{
   margin: 0px; 
 }
 
+.country-detail{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .country-details{
   padding: 0px 10px 5px 10px; 
 }
@@ -119,9 +126,13 @@ a{
 }
 
 .back-btn{
-  cursor: pointer; 
+  cursor: pointer;
+  padding: .5rem 1.75rem;
 }
 
+.back-btn>i{
+  margin-right: .65rem; 
+}
 /*MISC*/
 
 .bold{

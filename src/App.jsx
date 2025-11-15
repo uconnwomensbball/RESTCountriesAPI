@@ -23,14 +23,13 @@ function App() {
       setMode("Dark")}
   } 
 
-
     return (
       <>
       <BrowserRouter>      
           <Routes>
              <Route element={<Layout mode={mode} changeMode={changeMode}/>}> 
                 <Route path="/" element={<Home mode={mode}/>}/>
-                <Route path="/:country" element={<CountryDetail/>}/>
+                <Route path="/:country" element={<CountryDetail mode={mode}/>}/>
               </Route> 
           </Routes>
       
