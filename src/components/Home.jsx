@@ -13,22 +13,20 @@ export default function Home({mode}){
     const mappedCountries = displayedCountries.map(function(country){
   
       return (
-        <>
-        <Link to={`/${country.name}}`}>
-          <div className = "individual-country-div" key={country.name} style={{
-            backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)", 
-            color: mode === "Light"? "hsl(0, 100%, 100%)": "hsl(200, 15%, 8%)", 
-            boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}>
-            <img src={country.flags.png} alt={`flag of ${country.name}`}/>
-            <div className = "country-details">
-              <h4>{country.name}</h4>
-              <p className= "small-font"><span className="bold">Population:</span> <span>{country.population.toLocaleString()}</span></p>
-              <p className= "small-font"><span className="bold">Region:</span> <span>{country.region}</span></p>
-              <p className= "small-font"><span className="bold">Capital:</span> <span>{country.capital}</span></p>
+          <Link to={`/${country.name}}`}>
+            <div className = "individual-country-div" key={country.name} style={{
+              backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)", 
+              color: mode === "Light"? "hsl(0, 100%, 100%)": "hsl(200, 15%, 8%)", 
+              boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}>
+              <img src={country.flags.png} alt={`flag of ${country.name}`}/>
+              <div className = "country-details">
+                <h4>{country.name}</h4>
+                <p className= "small-font"><span className="bold">Population:</span> <span>{country.population.toLocaleString()}</span></p>
+                <p className= "small-font"><span className="bold">Region:</span> <span>{country.region}</span></p>
+                <p className= "small-font"><span className="bold">Capital:</span> <span>{country.capital}</span></p>
+              </div>
             </div>
-          </div>
-        </Link>
-        </>
+          </Link>
       )
     })
 
@@ -54,7 +52,11 @@ export default function Home({mode}){
     
     return (
 
-    <>
+    <main className="countries-home-main" style={{
+          backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 95%)",
+          color: mode === "Light"? "hsl(0, 0%, 95%)": "hsl(200, 15%, 8%)"}}>
+
+      
         <div className="query-div" style={{
             backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 95%)",
             color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)"}}>
@@ -63,7 +65,7 @@ export default function Home({mode}){
                 <input  onChange={()=>filterByName(event.target.value)} id="country" className="small-font" style={{
                     backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)",
                     color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)",
-                    boxShadow: mode === "Light"? "50px 6px 0px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 90%)" }
+                    boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}
                     }></input>
             </div>
             <div className="select-region-div">
@@ -82,11 +84,9 @@ export default function Home({mode}){
             </div>
             </div>
 
-          <div className="countries-div" style={{
-          backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 95%)",
-          color: mode === "Light"? "hsl(0, 0%, 95%)": "hsl(200, 15%, 8%)"}}>
+          <div className="countries-div" >
             {mappedCountries}
           </div>
-        </>
+        </main>
           )
 }

@@ -1,11 +1,22 @@
 import { useParams, Link } from "react-router"
 import data from "../data.json"
+import countries from "i18n-iso-countries"
+import en from "i18n-iso-countries/langs/en.json"
 
 export default function CountryDetail({mode}){
   let params = useParams()
  
   const matchingCountry = data.find(function(country){
     return country.name + "}" === params.country})
+
+  countries.registerLocale(en)
+
+    console.log("borders",matchingCountry.borders)
+    //console.log(countries.getName(params.country.split("").slice(0, -1).join(""), "en")) // "United States"
+    //https://www.npmjs.com/package/i18n-iso-countries
+  //const matchingCountrysBorders = matchingCountry.borders.map(function(border){
+    //return countries.getName(border)
+  //})
 
   return (
     <>
@@ -31,7 +42,9 @@ export default function CountryDetail({mode}){
           <div>
             <p><span className="bold">Language(s):</span> {matchingCountry.languages[0].name}</p>
             <p><span className="bold">Currency:</span> {matchingCountry.currencies[0].name}</p>
-            <p><span className="bold">Borders:</span> {matchingCountry.borders? matchingCountry.borders: "None"}</p>
+            <p><span className="bold">Borders:</span> {matchingCountry.borders? matchingCountry.borders.map(function(border){
+    return countries.getName(border, "en")
+  }): "None"}</p>
           </div>
           </div>
         </div>
