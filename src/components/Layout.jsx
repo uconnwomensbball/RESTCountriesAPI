@@ -7,7 +7,7 @@ export default function Layout({mode, changeMode}){
         <>
             <Header mode={mode} changeMode={changeMode}/>
             <Outlet/>
-            <Footer/>
+            <Footer mode={mode}/>
         </>
     )
 }

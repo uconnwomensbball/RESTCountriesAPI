@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import { Link } from "react-router"
-import data from "../datasample.json"
+import data from "../data.json"
 
 export default function Home({mode}){
 
@@ -19,7 +19,7 @@ export default function Home({mode}){
             backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)", 
             color: mode === "Light"? "hsl(0, 100%, 100%)": "hsl(200, 15%, 8%)", 
             boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}>
-            <img src={country.flags.png}/>
+            <img src={country.flags.png} alt={`flag of ${country.name}`}/>
             <div className = "country-details">
               <h4>{country.name}</h4>
               <p className= "small-font"><span className="bold">Population:</span> <span>{country.population.toLocaleString()}</span></p>
@@ -49,30 +49,32 @@ export default function Home({mode}){
         return country.name.toLowerCase().includes(name.toLowerCase())
       })
       setDisplayedCountries(countriesFilteredByName)
-    }
+     
+    }  
     
     return (
 
     <>
         <div className="query-div" style={{
-            backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 99%)",
+            backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 95%)",
             color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)"}}>
             <div className="input-country-div small-font">
                 <label htmlFor="country"> <i className="fa-solid fa-magnifying-glass"></i> Search for a country:</label>
-                <input  onChange={()=>filterByName(event.target.value)} id="country" className="small-font" placeholder="e.g. Albania" style={{
+                <input  onChange={()=>filterByName(event.target.value)} id="country" className="small-font" style={{
                     backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)",
                     color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)",
-                    boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)" }}></input>
+                    boxShadow: mode === "Light"? "50px 6px 0px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 90%)" }
+                    }></input>
             </div>
             <div className="select-region-div">
                 <label htmlFor="region" className = "small-font">Filter by region:</label>
-                <select onChange={()=>filterByRegion(event.target.value)} defaultValue="All" style={{
+                <select onChange={()=>filterByRegion(event.target.value)} style={{
                     backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)", 
                     color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)", 
                     boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}>
                   <option value="All">All</option>
                   <option value="Africa">Africa</option>
-                  <option value="America">America</option>
+                  <option value="Americas">Americas</option>
                   <option value="Asia">Asia</option>
                   <option value="Europe">Europe</option>
                   <option value="Oceania">Oceania</option>
@@ -81,8 +83,8 @@ export default function Home({mode}){
             </div>
 
           <div className="countries-div" style={{
-          backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 99%)",
-          color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)"}}>
+          backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 95%)",
+          color: mode === "Light"? "hsl(0, 0%, 95%)": "hsl(200, 15%, 8%)"}}>
             {mappedCountries}
           </div>
         </>

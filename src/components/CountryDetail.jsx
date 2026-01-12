@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router"
-import data from "../datasample.json"
+import data from "../data.json"
 
 export default function CountryDetail({mode}){
   let params = useParams()
@@ -8,13 +8,17 @@ export default function CountryDetail({mode}){
     return country.name + "}" === params.country})
 
   return (
-    <div className="country-detail">
-      <Link className="back-btn" to="/" style={{
+    <>
+    <Link className="back-btn" to="/" style={{
           backgroundColor: mode === "Light"? "hsl(209, 23%, 22%)": "hsl(0, 100%, 100%)", 
           color: mode === "Light"? 'hsl(0, 100%, 100%)': "hsl(200, 15%, 8%)", 
-          boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Back</Link>
+          boxShadow: mode === "Light"? "0 4px 8px hsl(207, 26%, 10%)": "5px 5px 10px hsl(0, 0%, 93%)"}}><i className="fa fa-long-arrow-left" aria-hidden="true"></i>Back</Link>
+    <div className="country-detail" style={{
+          backgroundColor: mode === "Light"? "hsl(207, 26%, 17%)": "hsl(0, 0%, 95%)",
+          color: mode === "Light"? "hsl(0, 0%, 95%)": "hsl(200, 15%, 8%)"}}>
+      
       <div className="country-detail-div">
-        <img src={matchingCountry.flags.svg}/>
+        <img src={matchingCountry.flags.svg} alt={`flag of ${matchingCountry.name}`}/>
         <div>
           <h1>{matchingCountry.name}</h1>
           <div className="country-details-div">
@@ -34,5 +38,6 @@ export default function CountryDetail({mode}){
       </div>
     
     </div>
+    </>
   )
 }
